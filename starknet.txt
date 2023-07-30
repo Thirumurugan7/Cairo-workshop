@@ -14,6 +14,7 @@ Create bravoos wallet and take public and private create
 Now we create Account
 
 First we need to create a json file
+ mkdir ~/.starkli-wallets/deployer
 touch ~/.starkli-wallets/deployer/account.json
 
 create a signer by the following command:
