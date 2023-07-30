@@ -6,17 +6,18 @@ to install starkli:
 
 then close and restart the terminal
 
-then run : starkliup
+then run : <code> starkliup</code>
 
 on successfull installation you can check the version by running the following command:
 
-starkli --version
+<code>starkli --version </code>
 
 Create bravoos wallet and take public and private create
 create a signer by the following command:
 
-starkli signer keystore from-key \
+<code>starkli signer keystore from-key \
 ~/.starkli-wallets/deployer/keystore.json
+</code>
 
 It will ask for private key  and password and will populate the keystore.json
 Also keep smartcontract class hash and smart wallet address from starkscan
@@ -24,7 +25,7 @@ Also keep smartcontract class hash and smart wallet address from starkscan
 Now we create Account
 
 First we need to create a json file
-touch ~/.starkli-wallets/deployer/account.json
+<code>touch ~/.starkli-wallets/deployer/account.json</code>
 
 then open this file in vim using the following command
 
@@ -54,8 +55,8 @@ Now let's set the env variables.
 
 First create the env variable file using the following command:
 
-$ touch ~/.starkli-wallets/deployer/envars.sh
-
+<code>$ touch ~/.starkli-wallets/deployer/envars.sh
+</code>
 Open the env variable file in vim and paste the following:
 
 export STARKNET_RPC=<API_url_for_starknet_goerli>
@@ -65,15 +66,15 @@ export STARKNET_KEYSTORE=~/.starkli-wallets/deployer/keystore.json
 save it by <esc>:wq!
 
 Run the command
-$ source ~/.starkli-wallets/deployer/envars.sh
+<code>$ source ~/.starkli-wallets/deployer/envars.sh</code>
 
 we can check if the env variables are set by echoing it :
 echo $STARKNET_RPC $STARKNET_ACCOUNT $STARKNET_KEYSTORE
 
 All set lets install scarb-->
 
-curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 0.5.1
-
+<code>curl --proto '=https' --tlsv1.2 -sSf https://docs.swmansion.com/scarb/install.sh | sh -s -- -v 0.5.1
+</code>
 on successful install check the version by 
 scarb --version
 
@@ -84,9 +85,9 @@ cairo: 2.0.1 (https://crates.io/crates/cairo-lang-compiler/2.0.1)
 Set-up over
 
 Lets code.
-mkdir starknet
+<code>mkdir starknet</code>
 
-scarb new test
+<code>scarb new test</code>
 
 code . //to open vs code
 
