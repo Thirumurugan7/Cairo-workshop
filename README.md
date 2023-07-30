@@ -29,9 +29,9 @@ First we need to create a json file
 
 then open this file in vim using the following command
 
-vi ~/.starkli-wallets/deployer/account.json
-
-and paste {
+<code>vi ~/.starkli-wallets/deployer/account.json
+</code>
+and paste <code>{
   "version": 1,
   "variant": {
   "type": "open_zeppelin",
@@ -43,7 +43,7 @@ and paste {
     "class_hash": "<SMART_WALLET_CLASS_HASH>",
     "address": "<SMART_WALLET_ADDRESS>"
   }
-}
+}</code>
 
 save the file using the following command:
 
@@ -94,7 +94,7 @@ code . //to open vs code
 in src dir -> create a new file and name it Storage.cairo
 
 in that file enter the following code: 
-
+<code>
 #[starknet::interface]
 trait simpleStorage<T> {
     fn store(ref self: T, value: u32);
@@ -122,33 +122,39 @@ mod Storage {
 
 }
 
+</code>
+
 in lib.cairo
 
 delete everything and add the below code:
-
+<code>
 mod Storage;
-
+</code>
 
 in Scarb.toml file add the following code under dependencies:
+<code>
+
 starknet = "2.0.1"
 
 [[target.starknet-contract]]
 # Enable Sierra codegen.
 sierra = true
 
+</code>
+
 
 and run:
-
+<code>
 scarb build
-
+</code>
 after successfull Compilation run the following command
-
+<code>
 starkli declare ./target/dev/test_Storage.sierra.json
-
+</code>
 You will get the class hash
-
+<code>
 starkli deploy \<copy_paste_your_class_hash_here>
-
+</code>
 You will get contract address
 
 
