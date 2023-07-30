@@ -10,6 +10,12 @@ on successfull installation you can check the version by running the following c
 starkli --version
 
 Create bravoos wallet and take public and private create
+
+Now we create Account
+
+First we need to create a json file
+touch ~/.starkli-wallets/deployer/account.json
+
 create a signer by the following command:
 
 starkli signer keystore from-key \
@@ -18,10 +24,6 @@ starkli signer keystore from-key \
 It will ask for private key  and password and will populate the keystore.json
 Also keep smartcontract class hash and smart wallet address from starkscan
 
-Now we create Account
-
-First we need to create a json file
-touch ~/.starkli-wallets/deployer/account.json
 
 then open this file in vim using the following command
 
